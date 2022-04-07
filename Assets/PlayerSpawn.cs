@@ -54,16 +54,16 @@ public class PlayerSpawn : MonoBehaviour
         
        
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Enemy")
         {
-            animator.SetBool("Attack", true);
+            animator.SetTrigger("RoundKick");
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        animator.SetBool("Attack", false);
+        animator.SetTrigger("Run");
     }
 
 }
